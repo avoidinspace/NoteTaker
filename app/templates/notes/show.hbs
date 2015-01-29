@@ -1,0 +1,32 @@
+<div class='notes-control'>
+  <div class='pull-right'>
+    <a {{action 'destroyNote'}} class='btn'>{{fa-icon 'trash' size=2}}</a>
+    <a {{action 'closeNote'}} class='btn'>{{fa-icon 'times' size=2}}</a>
+  </div>
+  <div class='clearfix'></div>
+</div>
+
+<div class='panel panel-default'>
+  <div class='panel-heading note-title'>
+    <h3>{{note.title}}</h3>
+  </div>
+  <div class='panel-body'>
+    <div class='note-content'>
+      {{#if isEditing}}
+        {{edit-note class="note-edit" rows=1 value=note.content action="acceptChanges"}}
+      {{else}}
+        <div {{action "editNote" on="doubleClick"}}>{{note.content}}</div>
+      {{/if}}
+    </div>
+  </div>
+  <div class='panel-footer'>
+    <ul class='note-meta'>
+      <li>
+        Created: {{ago note.created_at}}
+      </li>
+      <li>
+        Last Update: {{ago note.updated_at}}
+      </li>
+    </ul>
+  </div>
+</div>

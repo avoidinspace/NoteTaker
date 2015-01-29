@@ -1,0 +1,69 @@
+.notes-nav {
+  @include make-md-column(3);
+
+  .notes-control {
+    @include box-shadow(0 1px 1px rgba(0,0,0,.05));
+  }
+
+  .notes-list {
+    li {
+      padding: 0px;
+    }
+    .note-link {
+      font-size: 16px;
+      font-weight: 800;
+      padding: 15px;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+      &:hover, &:active, &:focus {
+        text-decoration: none;
+      }
+      &.active {
+        background: #eaeaea;
+      }
+    }
+  }
+}
+
+.note {
+  @include make-md-column(9);
+
+  .note-title {
+    text-align: center;
+    h3 {
+      margin: 0px;
+    }
+  }
+  .note-meta {
+    font-size: $font-size-small;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    li {
+      display: inline;
+      margin-left: 15px;
+    }
+  }
+  .note-content {
+    padding: 15px;
+    textarea {
+      border: none;
+      box-shadow: none;
+      height: auto;
+      padding: 0;
+      width: 100%;
+      resize: none;
+      &:focus {
+        border: none;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+  .panel-footer {
+    @include clearfix();
+  }
+
+}
